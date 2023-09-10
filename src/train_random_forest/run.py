@@ -224,7 +224,7 @@ def get_inference_pipeline(rf_config, max_tfidf_features):
 
 if __name__ == "__main__":
 
-    parser = argparse.ArgumentParser(description="Basic cleaning of dataset")
+    parser = argparse.ArgumentParser(description="Processed data for model training")
 
     parser.add_argument(
         "--trainval_artifact",

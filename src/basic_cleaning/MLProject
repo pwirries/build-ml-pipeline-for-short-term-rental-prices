@@ -1,0 +1,25 @@
+name: basic_cleaning
+conda_env: conda.yml
+
+entry_points:
+  main:
+    parameters:
+      input_artifact: 
+        description: Name of input artifact for data cleaning
+        type: string
+      artifact_name:
+        description: Name of cleaned data artifact
+        type: string
+      artifact_description:
+        description: Description of artifact
+        type: string
+        default: Cleaned model input data
+      artifact_type:
+        description: Type of artifact
+        type: string
+        default: processed_data
+    command: >-
+      python run.py --input_artifact={input_artifact} \
+                    --artifact_name={artifact_name} \
+                    --artifact_description={artifact_description} \
+                    --artifact_type={artifact_type}
