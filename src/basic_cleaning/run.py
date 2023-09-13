@@ -26,6 +26,8 @@ def go(args):
     data = data[idx].copy()
     # Convert last_review to datetime
     data['last_review'] = pd.to_datetime(data['last_review'])
+    idx = df['longitude'].between(-74.25, -73.50) & df['latitude'].between(40.5, 41.2)
+    df = df[idx].copy()
 
     data.to_csv("clean_sample.csv", index = False)
 
