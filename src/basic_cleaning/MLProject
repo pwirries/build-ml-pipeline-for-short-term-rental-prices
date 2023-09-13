@@ -7,19 +7,29 @@ entry_points:
       input_artifact: 
         description: Name of input artifact for data cleaning
         type: string
-      artifact_name:
+      output_artifact:
         description: Name of cleaned data artifact
         type: string
-      artifact_description:
+      output_description:
         description: Description of artifact
         type: string
         default: Cleaned model input data
-      artifact_type:
+      output_type:
         description: Type of artifact
         type: string
         default: processed_data
+      min_price:
+        description: Filter records with price below minimum provided
+        type: float
+        required: True
+      max_price:
+        description: Filter records with price above maximum provided
+        type: float
+        retuired: True
     command: >-
       python run.py --input_artifact={input_artifact} \
-                    --artifact_name={artifact_name} \
-                    --artifact_description={artifact_description} \
-                    --artifact_type={artifact_type}
+                    --output_artifact={output_artifact} \
+                    --output_description={output_description} \
+                    --output_type={output_type} \
+                    --min_price={min_price} \
+                    --max_price={max_price}
